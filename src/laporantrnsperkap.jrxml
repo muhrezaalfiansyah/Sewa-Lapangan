@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3166c35-6bc3-494d-a19f-ebbe7bd3c624">
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbltransaksiperkap.`no_pemesan` AS tbltransaksiperkap_no_pemesan,
+     tbltransaksiperkap.`nama_pemesan` AS tbltransaksiperkap_nama_pemesan,
+     tbltransaksiperkap.`nama_team` AS tbltransaksiperkap_nama_team,
+     tbltransaksiperkap.`nm_produk` AS tbltransaksiperkap_nm_produk,
+     tbltransaksiperkap.`kd_produk` AS tbltransaksiperkap_kd_produk,
+     tbltransaksiperkap.`hrg_sewa` AS tbltransaksiperkap_hrg_sewa,
+     tbltransaksiperkap.`jumlah` AS tbltransaksiperkap_jumlah,
+     tbltransaksiperkap.`total` AS tbltransaksiperkap_total,
+     tbltransaksiperkap.`bayar` AS tbltransaksiperkap_bayar,
+     tbltransaksiperkap.`kembali` AS tbltransaksiperkap_kembali
+FROM
+     `tbltransaksiperkap` tbltransaksiperkap]]>
+	</queryString>
+	<field name="tbltransaksiperkap_no_pemesan" class="java.lang.String"/>
+	<field name="tbltransaksiperkap_nama_pemesan" class="java.lang.String"/>
+	<field name="tbltransaksiperkap_nama_team" class="java.lang.String"/>
+	<field name="tbltransaksiperkap_nm_produk" class="java.lang.String"/>
+	<field name="tbltransaksiperkap_kd_produk" class="java.lang.String"/>
+	<field name="tbltransaksiperkap_hrg_sewa" class="java.lang.Integer"/>
+	<field name="tbltransaksiperkap_jumlah" class="java.lang.Integer"/>
+	<field name="tbltransaksiperkap_total" class="java.lang.Integer"/>
+	<field name="tbltransaksiperkap_bayar" class="java.lang.Integer"/>
+	<field name="tbltransaksiperkap_kembali" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="99" height="132" uuid="798b83ad-e468-4326-8a44-0d4a00c4e214"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="8f887b80-cec6-4ac6-96b4-12686786b102"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="36b8e02a-5c8b-475c-8ce5-f17f8c27d80b"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry Title]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="932c9648-2af8-4b4c-a493-2d749f01c223"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry SubTitle]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="805c8551-3858-433c-9fb2-82d30fc3421c"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="ea2014ee-56a9-4b6a-aa77-2ccfb2c7b8a0"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="55" height="18" forecolor="#000000" uuid="6a40e381-8ec4-4830-ada2-90493bc7cca4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_no_pemesan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="55" y="7" width="55" height="18" forecolor="#000000" uuid="d220ab98-6004-4b26-9992-6237fc051411"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_nama_pemesan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="110" y="7" width="55" height="18" forecolor="#000000" uuid="dedb1e74-ab8c-42c2-b47c-3584f81039b4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_nama_team]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="165" y="7" width="55" height="18" forecolor="#000000" uuid="768ec0e8-2bcd-45ce-affe-35e4c87acf38"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_nm_produk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="220" y="7" width="55" height="18" forecolor="#000000" uuid="eb1a91ef-1c76-41fa-a7ab-8728f9301d8d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_kd_produk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="275" y="7" width="55" height="18" forecolor="#000000" uuid="fee26b30-8e2c-4cd9-844c-678a8043ae17"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_hrg_sewa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="330" y="7" width="55" height="18" forecolor="#000000" uuid="97019ec7-9bc5-4dd0-a749-ea600e88d646"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="385" y="7" width="55" height="18" forecolor="#000000" uuid="a256b532-e0a2-4597-b245-78abb78f5752"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="440" y="7" width="55" height="18" forecolor="#000000" uuid="3914011f-f794-4cb8-8d04-44c6e4619e40"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="495" y="7" width="55" height="18" forecolor="#000000" uuid="398a5e48-705b-46ac-9fca-6d09cbf90608"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tbltransaksiperkap_kembali]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="89013973-ecc1-4102-ad61-1dc3e3eae4b8"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="55" height="18" uuid="4da333be-e917-4b19-8216-909c5ec39acd"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_no_pemesan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="55" y="0" width="55" height="18" uuid="2368eb40-7ea6-47ed-89a5-08dbae91668c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_nama_pemesan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="110" y="0" width="55" height="18" uuid="a4d545e8-0ea2-4493-85e5-061f7bfdad48"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_nama_team}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="165" y="0" width="55" height="18" uuid="f8d3dd87-3055-43c1-b3c3-3948be6dde4d"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_nm_produk}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="220" y="0" width="55" height="18" uuid="0867bfb2-c7de-4074-9a13-67e384e6aa9f"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_kd_produk}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="275" y="0" width="55" height="18" uuid="f580e135-651c-4633-9393-530ab1f25d01"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_hrg_sewa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="330" y="0" width="55" height="18" uuid="466ee9fa-47d1-489e-bf1d-d5f7a788da18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_jumlah}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="385" y="0" width="55" height="18" uuid="2f853847-66e1-45c2-bb47-49321199f097"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_total}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="440" y="0" width="55" height="18" uuid="0de2cd30-df9d-4518-8de3-b14c82b9ae5b"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_bayar}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="495" y="0" width="55" height="18" uuid="c561121c-3791-4cf7-9797-ca92d08b80a5"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tbltransaksiperkap_kembali}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fdb79a29-3181-4fe3-a31a-eba3ae9d6837"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="49339d66-b6aa-41af-9ed6-da8f161b04c4"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="2c7edcc6-0155-4902-86ad-b4f89207cf21"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="4b25893e-0d8e-47c9-9916-0959344d9030"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="5a7e94a4-f4af-4e0d-a6a0-d40eddec1513"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
